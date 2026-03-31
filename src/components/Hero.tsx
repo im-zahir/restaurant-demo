@@ -106,7 +106,7 @@ export function Hero() {
                 whileTap={{ scale: 0.98 }}
                 className={cn(
                   "px-8 py-4 border font-bold uppercase tracking-widest flex items-center gap-2 transition-all",
-                  currentTheme === "vibrant" ? "bg-white border-accent/20 text-accent rounded-2xl" : "bg-white/5 border-white/10 text-foreground rounded-full backdrop-blur-xl"
+                  currentTheme === "vibrant" ? "bg-background border-accent/20 text-accent rounded-2xl" : "bg-white/5 border-white/10 text-foreground rounded-full backdrop-blur-xl"
                 )}
               >
                 Reserve Table

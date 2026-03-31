@@ -23,8 +23,8 @@ export function MenuCard({ item }: { item: MenuItem }) {
       className={cn(
         "group overflow-hidden p-5 space-y-5 transition-all transition-duration-500",
         currentTheme === "luxury" ? "glass rounded-[var(--radius-card)] hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/5 backdrop-blur-xl" :
-        currentTheme === "vibrant" ? "bg-white border-2 border-accent/20 rounded-[var(--radius-card)] hover:border-accent hover:shadow-xl" :
-        "bg-white border border-slate-200 rounded-[var(--radius-card)] hover:shadow-md"
+        currentTheme === "vibrant" ? "bg-card-bg border-2 border-accent/20 rounded-[var(--radius-card)] hover:border-accent hover:shadow-xl" :
+        "bg-card-bg border border-accent/10 rounded-[var(--radius-card)] hover:shadow-md"
       )}
     >
       <div className={cn(
@@ -50,9 +50,9 @@ export function MenuCard({ item }: { item: MenuItem }) {
           {item.tags?.map((tag) => (
             <span key={tag} className={cn(
               "px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest border flex items-center gap-1.5 shadow-xl transition-all",
-              currentTheme === "vibrant" ? "bg-accent text-white border-transparent" : "bg-black/80 text-white border-white/10 backdrop-blur-xl"
+              currentTheme === "vibrant" ? "bg-accent text-accent-foreground border-transparent" : "bg-black/80 text-white border-white/10 backdrop-blur-xl"
             )}>
-              <span className={cn("w-1.5 h-1.5 rounded-full", currentTheme === "vibrant" ? "bg-white" : "bg-accent animate-pulse")} />
+              <span className={cn("w-1.5 h-1.5 rounded-full", currentTheme === "vibrant" ? "bg-accent-foreground" : "bg-accent animate-pulse")} />
               {tag}
             </span>
           ))}
@@ -87,8 +87,8 @@ export function MenuCard({ item }: { item: MenuItem }) {
         className={cn(
           "w-full py-4 font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all active:scale-95",
           currentTheme === "luxury" ? "bg-accent/5 border border-accent/20 text-accent rounded-2xl shadow-lg hover:bg-accent hover:text-accent-foreground" :
-          currentTheme === "vibrant" ? "bg-accent text-white rounded-xl shadow-xl shadow-accent/20 hover:scale-[1.02]" :
-          "bg-slate-900 text-white rounded-lg hover:bg-slate-800"
+          currentTheme === "vibrant" ? "bg-accent text-accent-foreground rounded-xl shadow-xl shadow-accent/20 hover:scale-[1.02]" :
+          "bg-accent text-accent-foreground rounded-lg hover:opacity-90"
         )}
       >
         <Plus className="w-4 h-4" />

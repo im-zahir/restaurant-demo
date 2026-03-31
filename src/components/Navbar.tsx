@@ -94,7 +94,7 @@ export function Navbar() {
           {isLoaded && (
             <Link 
               href={customerEmail ? "/profile" : "/login"}
-              className="px-6 py-2 bg-white/10 hover:bg-white/20 text-xs font-bold uppercase tracking-widest rounded-full transition-colors"
+              className="px-6 py-2 bg-foreground/5 hover:bg-foreground/10 text-xs font-bold uppercase tracking-widest rounded-full transition-colors border border-foreground/5"
             >
               {customerEmail ? "My Profile" : "Login"}
             </Link>

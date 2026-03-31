@@ -52,12 +52,12 @@ export function DesignSwitcher() {
                     }}
                     className={cn(
                       "w-full flex items-center gap-3 p-3 rounded-2xl transition-all group",
-                      isActive ? "bg-accent text-accent-foreground" : "hover:bg-white/5 text-foreground/60"
+                      isActive ? "bg-accent text-accent-foreground" : "hover:bg-foreground/5 text-foreground/60"
                     )}
                   >
                     <div className={cn(
                       "w-8 h-8 rounded-full flex items-center justify-center transition-transform group-hover:scale-110",
-                      isActive ? "bg-white/20" : theme.color
+                      isActive ? "bg-foreground/10" : theme.color
                     )}>
                       <Icon size={16} className={isActive ? "text-white" : "text-white"} />
                     </div>
