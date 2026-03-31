@@ -38,36 +38,38 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-            {settings.is_maintenance_mode ? "We'll be" : "Crafting the"} <br />
-            <span className="text-gradient">{settings.is_maintenance_mode ? "Back Soon" : "Perfect Bite"}</span>
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-black leading-[1.1] tracking-tight">
+            {settings.is_maintenance_mode ? "We'll be" : "The Soul of"} <br />
+            <span className="text-gradient drop-shadow-xl">
+              {settings.is_maintenance_mode ? "Back Soon" : "Fine Dining"}
+            </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-foreground/80 max-w-lg font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-foreground/70 max-w-lg font-light leading-relaxed italic">
             {settings.is_maintenance_mode 
               ? "We're currently updating our kitchen to serve you better. Online ordering is temporarily disabled."
-              : "Experience culinary excellence where every ingredients tell a story. Ordered via WhatsApp, delivered with love."
+              : "“Savor every moment with our chef-curated masterpieces, delivered with precision and passion.”"
             }
           </p>
 
           {!settings.is_maintenance_mode && (
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap gap-5 pt-4">
               <motion.a
                 href="#menu"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-accent text-accent-foreground font-bold rounded-lg flex items-center gap-2 shadow-lg shadow-accent/20 transition-all hover:shadow-accent/40"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 bg-accent text-accent-foreground font-bold uppercase tracking-widest rounded-full flex items-center gap-2 shadow-xl shadow-accent/20 transition-all hover:shadow-accent/40"
               >
-                Order via WhatsApp
-                <PhoneCall className="w-5 h-5" />
+                Explore Menu
+                <ChevronRight className="w-5 h-5" />
               </motion.a>
               <motion.a
                 href="#booking"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-glass border border-glass-border text-foreground font-bold rounded-lg flex items-center gap-2 backdrop-blur-md transition-all hover:bg-white/10"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="px-8 py-4 bg-white/5 border border-white/10 text-foreground font-bold uppercase tracking-widest rounded-full flex items-center gap-2 backdrop-blur-xl transition-all hover:bg-white/10"
               >
-                Book a Table
+                Reserve Table
                 <Calendar className="w-5 h-5" />
               </motion.a>
             </div>

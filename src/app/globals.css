@@ -22,7 +22,8 @@
   --color-glass-border: var(--glass-border);
   
   --font-sans: var(--font-outfit), var(--font-geist-sans);
-  --font-heading: var(--font-outfit);
+  --font-serif: var(--font-playfair);
+  --font-heading: var(--font-serif);
 }
 
 body {
