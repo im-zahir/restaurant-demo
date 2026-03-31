@@ -1,0 +1,24 @@
+# Restaurant Website Implementation Tasks
+
+- [x] Initialize Next.js project with Tailwind and TypeScript `[x]`
+- [x] Define the Design System (Typography, Colors, Spacing) `[x]`
+- [x] Implementation of Core UI Components:
+    - [x] Sticky Glassmorphism Navbar `[x]`
+    - [x] Cinematic Hero Section with primary CTAs `[x]`
+    - [x] Filterable Menu Grid with Search `[x]`
+    - [x] Floating Cart Bottom Sheet `[x]`
+    - [x] Table Booking Modal/Section `[x]`
+- [x] Logic & Integration:
+    - [x] WhatsApp Order Generator Utility `[x]`
+    - [x] Cart state management `[x]`
+- [x] Supabase Integration (Dynamic Data):
+    - [x] Initialize Supabase Client `[x]`
+    - [x] Fetch menu items from Supabase `[x]`
+    - [x] Submit bookings to Supabase `[x]`
+- [x] Admin Dashboard (Phase 3):
+    - [x] Admin Root Layout & Sidebar `[x]`
+    - [x] Simple Admin Auth logic `[x]`
+    - [x] Dashboard Stats Overview `[x]`
+    - [x] Menu Item CRUD management `[x]`
+    - [x] Booking Management UI `[x]`
+- [x] Final Polish & SEO Optimization `[x]`
