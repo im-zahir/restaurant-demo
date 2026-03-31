@@ -108,80 +108,80 @@ export function BookingForm() {
               </button>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="glass p-8 md:p-10 rounded-[40px] space-y-6 shadow-2xl shadow-black/50">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-2 leading-none">Your Name</label>
+            <form onSubmit={handleSubmit} className="glass p-10 md:p-14 lg:p-16 rounded-[40px] space-y-8 shadow-2xl shadow-black/50">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-3 leading-none">Your Name</label>
                   <input
                     required
                     type="text"
                     placeholder="John Doe"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 focus:outline-none focus:border-accent text-sm"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 focus:outline-none focus:border-accent text-sm transition-all focus:bg-white/[0.08]"
                   />
                 </div>
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-2 leading-none">Phone</label>
+                <div className="space-y-3">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-3 leading-none">Phone</label>
                   <input
                     required
                     type="tel"
                     placeholder="+880 17..."
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 focus:outline-none focus:border-accent text-sm"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 focus:outline-none focus:border-accent text-sm transition-all focus:bg-white/[0.08]"
                   />
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="space-y-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-2 leading-none">Guests</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="space-y-3">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-3 leading-none">Guests</label>
                   <select
                     value={formData.guests}
                     onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 focus:outline-none focus:border-accent text-sm"
+                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 focus:outline-none focus:border-accent text-sm transition-all focus:bg-white/[0.08]"
                   >
                     {[1, 2, 3, 4, 5, 10, 20].map((num) => (
                       <option key={num} value={num} className="bg-background">{num} Guests</option>
                     ))}
                   </select>
                 </div>
-                <div className="space-y-2 md:col-span-2">
-                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-2 leading-none">Date & Time</label>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-2">
+                <div className="space-y-3 md:col-span-2">
+                  <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-3 leading-none">Date & Time</label>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <input
                       required
                       type="date"
                       value={formData.date}
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 focus:outline-none focus:border-accent text-sm uppercase color-scheme-dark"
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 focus:outline-none focus:border-accent text-sm uppercase color-scheme-dark transition-all focus:bg-white/[0.08]"
                     />
                     <input
                       required
                       type="time"
                       value={formData.time}
                       onChange={(e) => setFormData({ ...formData, time: e.target.value })}
-                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 focus:outline-none focus:border-accent text-sm color-scheme-dark"
+                      className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 focus:outline-none focus:border-accent text-sm color-scheme-dark transition-all focus:bg-white/[0.08]"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-2 leading-none">Special Requests</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-foreground/40 px-3 leading-none">Special Requests</label>
                 <textarea
-                  rows={2}
+                  rows={3}
                   placeholder="Occasion, dietary preferences, etc."
                   value={formData.note}
                   onChange={(e) => setFormData({ ...formData, note: e.target.value })}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-3 px-4 focus:outline-none focus:border-accent text-sm resize-none"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 focus:outline-none focus:border-accent text-sm resize-none transition-all focus:bg-white/[0.08]"
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full py-4 bg-accent text-accent-foreground rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-accent/20 transition-all hover:shadow-accent/40 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-3"
+                className="w-full py-5 bg-accent text-accent-foreground rounded-2xl font-black uppercase tracking-[0.2em] shadow-xl shadow-accent/20 transition-all hover:shadow-accent/40 hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-3"
               >
                 Confirm Booking
                 <Send className="w-5 h-5 fill-current" />
