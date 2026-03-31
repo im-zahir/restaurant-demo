@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Default: Luxury */
+  /* Default: Luxury Dark */
   --background: #050505;
   --foreground: #FDFDFD;
   --accent: #D4AF37;
@@ -13,10 +13,22 @@
   --radius-card: 40px;
 }
 
-.theme-vibrant {
+/* LUXURY */
+.theme-luxury.light {
+  --background: #FCF9F2; /* Cream */
+  --foreground: #1A1A1A;
+  --accent: #C5A572;
+  --accent-foreground: #FFFFFF;
+  --card: #FFFFFF;
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.05);
+}
+
+/* VIBRANT (Fast Food) */
+.theme-vibrant.light {
   --background: #FFFFFF;
   --foreground: #1A1A1A;
-  --accent: #E31837; /* McDonald's Red */
+  --accent: #E31837;
   --accent-foreground: #FFFFFF;
   --card: #F8F8F8;
   --glass: rgba(255, 255, 255, 0.9);
@@ -24,15 +36,38 @@
   --font-heading-var: var(--font-outfit);
   --radius-card: 24px;
 }
+.theme-vibrant.dark {
+  --background: #0F0202;
+  --foreground: #FDFDFD;
+  --accent: #FFC72C; /* McDonald's Yellow on Dark */
+  --accent-foreground: #000000;
+  --card: #1A0505;
+  --glass: rgba(26, 5, 5, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-heading-var: var(--font-outfit);
+  --radius-card: 24px;
+}
 
-.theme-minimal {
-  --background: #F8FAFC; /* Slate 50 */
-  --foreground: #0F172A; /* Slate 900 */
+/* MINIMAL */
+.theme-minimal.light {
+  --background: #F8FAFC;
+  --foreground: #0F172A;
   --accent: #020617;
   --accent-foreground: #FFFFFF;
   --card: #FFFFFF;
   --glass: rgba(255, 255, 255, 0.8);
   --glass-border: rgba(0, 0, 0, 0.1);
+  --font-heading-var: var(--font-outfit);
+  --radius-card: 12px;
+}
+.theme-minimal.dark {
+  --background: #020617;
+  --foreground: #F8FAFC;
+  --accent: #38BDF8; /* Sky Blue accent for minimal dark */
+  --accent-foreground: #000000;
+  --card: #0F172A;
+  --glass: rgba(15, 23, 42, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.05);
   --font-heading-var: var(--font-outfit);
   --radius-card: 12px;
 }

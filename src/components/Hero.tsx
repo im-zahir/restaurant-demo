@@ -13,9 +13,8 @@ export function Hero() {
   
   return (
     <section id="hero" className={cn(
-      "relative min-h-[95vh] w-full flex items-center pt-20 overflow-hidden transition-all duration-700",
-      currentTheme === "vibrant" ? "bg-[#FFF9F9]" : 
-      currentTheme === "minimal" ? "bg-background flex flex-col justify-center text-center" : ""
+      "relative min-h-[95vh] w-full flex items-center pt-20 overflow-hidden transition-all duration-700 bg-background",
+      currentTheme === "minimal" ? "flex flex-col justify-center text-center" : ""
     )}>
       
       {/* LUXURY BACKGROUND */}
