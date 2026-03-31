@@ -3,6 +3,7 @@ import { Hero } from "@/components/Hero";
 import { MenuGrid } from "@/components/MenuGrid";
 import { BookingForm } from "@/components/BookingForm";
 import { Reviews } from "@/components/Reviews";
+import { Location } from "@/components/Location";
 import { CartSheet } from "@/components/CartSheet";
 import { CartProvider } from "@/hooks/useCart";
 
@@ -15,13 +16,13 @@ export default function Home() {
         
         <section id="menu" className="py-24 bg-background relative">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="text-center mb-16 space-y-4">
-              <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter">
-                Explore Our <span className="text-gradient">Menu</span>
+            <div className="text-center mb-20 space-y-4">
+              <h2 className="text-5xl md:text-7xl font-heading font-black tracking-tight">
+                Epicurean <span className="text-gradient">Selection</span>
               </h2>
-              <p className="text-foreground/40 max-w-2xl mx-auto text-lg font-medium leading-relaxed">
-                A symphony of flavors crafted with passion. 
-                From signature grills to artisanal bakes.
+              <p className="text-foreground/60 max-w-2xl mx-auto text-lg font-light italic leading-relaxed">
+                “A curated journey through the world’s finest ingredients, 
+                reimagined for the modern palate.”
               </p>
             </div>
             
@@ -33,14 +34,17 @@ export default function Home() {
 
         <Reviews />
 
+        <Location />
+
         <CartSheet />
 
         {/* Footer */}
         <footer className="py-20 border-t border-glass-border bg-black/60 relative overflow-hidden">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 items-center">
             <div className="text-center md:text-left space-y-4">
-              <div className="flex items-center justify-center md:justify-start gap-2">
-                <span className="text-2xl font-black text-gradient uppercase tracking-[0.2em]">Gourmet Haven</span>
+              <div className="flex flex-col items-center md:items-start group">
+                <span className="text-3xl font-heading font-black text-gradient uppercase tracking-tight leading-none">LuxeDine</span>
+                <span className="text-[10px] font-bold text-accent/60 uppercase tracking-[0.4em] mt-1 pl-1">Signature Experience</span>
               </div>
               <p className="text-sm text-foreground/40 leading-relaxed">
                 Dhaka's premier dining destination. <br />
@@ -67,7 +71,7 @@ export default function Home() {
           </div>
           <div className="mt-16 pt-8 border-t border-white/5 text-center">
             <p className="text-[10px] font-bold uppercase tracking-[0.5em] text-foreground/20">
-              © 2026 Gourmet Haven. All Rights Reserved.
+              © 2026 LuxeDine Signature. All Rights Reserved.
             </p>
           </div>
         </footer>

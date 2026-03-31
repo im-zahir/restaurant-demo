@@ -22,48 +22,50 @@ export function MenuCard({ item }: { item: MenuItem }) {
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      className="glass group rounded-3xl overflow-hidden p-4 space-y-4 transition-all hover:border-accent/40"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      whileHover={{ y: -5 }}
+      transition={{ duration: 0.4 }}
+      className="glass group rounded-[32px] overflow-hidden p-5 space-y-5 transition-all hover:border-accent/40 hover:shadow-2xl hover:shadow-accent/5 backdrop-blur-xl"
     >
-      <div className="relative h-48 w-full rounded-2xl overflow-hidden">
+      <div className="relative h-56 w-full rounded-2xl overflow-hidden shadow-inner">
+        <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
         <Image
           src={item.image}
           alt={item.name}
           fill
-          className="object-cover transition-transform duration-500 group-hover:scale-110"
+          className="object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute top-2 left-2 flex flex-wrap gap-1">
+        <div className="absolute top-3 left-3 flex flex-wrap gap-2 z-20">
           {item.tags?.map((tag) => (
-            <span key={tag} className="px-2 py-1 bg-black/60 backdrop-blur-md rounded-full text-[10px] font-bold uppercase tracking-wider text-white flex items-center gap-1">
-              {getTagIcon(tag)}
+            <span key={tag} className="px-3 py-1 bg-black/80 backdrop-blur-xl rounded-full text-[10px] font-bold uppercase tracking-widest text-white border border-white/10 flex items-center gap-1.5 shadow-xl">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
               {tag}
             </span>
           ))}
         </div>
       </div>
 
-      <div className="space-y-2">
-        <div className="flex justify-between items-start gap-2">
-          <h3 className="font-bold text-lg leading-tight group-hover:text-accent transition-colors">
+      <div className="space-y-3 px-1">
+        <div className="flex justify-between items-start gap-4">
+          <h3 className="font-heading text-xl font-black leading-tight group-hover:text-accent transition-colors duration-300">
             {item.name}
           </h3>
-          <span className="text-accent font-black whitespace-nowrap">
+          <span className="text-accent font-black text-lg whitespace-nowrap drop-shadow-sm">
             {formatPrice(item.price)}
           </span>
         </div>
-        <p className="text-sm text-foreground/50 line-clamp-2 leading-relaxed h-10">
+        <p className="text-sm text-foreground/40 line-clamp-2 leading-relaxed h-10 font-light italic">
           {item.description}
         </p>
       </div>
 
       <button
         onClick={() => addToCart(item)}
-        className="w-full py-3 bg-white/5 border border-white/10 rounded-xl text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all hover:bg-accent hover:text-accent-foreground active:scale-95"
+        className="w-full py-4 bg-accent/5 border border-accent/20 text-accent rounded-2xl text-xs font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all hover:bg-accent hover:text-accent-foreground active:scale-95 shadow-lg hover:shadow-accent/20"
       >
         <Plus className="w-4 h-4" />
-        Add to Cart
+        Add to Experience
       </button>
     </motion.div>
   );

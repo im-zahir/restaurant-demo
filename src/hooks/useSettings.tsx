@@ -29,7 +29,7 @@ const SettingsContext = createContext<SettingsContextType | undefined>(undefined
 
 export function SettingsProvider({ children }: { children: React.ReactNode }): React.ReactNode {
   const [settings, setSettings] = useState<RestaurantSettings>({
-    restaurant_name: "Gourmet Haven",
+    restaurant_name: "LuxeDine",
     whatsapp_number: "+8801700000000",
     address: "Gulshan-2, Dhaka, Bangladesh",
     currency: "BDT",

@@ -27,6 +27,7 @@ export function Navbar() {
     { name: "Menu", href: "#menu" },
     { name: "Book a Table", href: "#booking" },
     { name: "Reviews", href: "#reviews" },
+    { name: "Location", href: "#location" },
   ];
 
   return (
@@ -37,15 +38,25 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          {settings.logo_url ? (
-            <img src={settings.logo_url} alt="Logo" className="w-8 h-8 object-contain" />
-          ) : (
-            <UtensilsCrossed className="w-8 h-8 text-accent" />
-          )}
-          <span className="text-xl font-bold text-gradient uppercase tracking-wider">
-            {settings.restaurant_name}
-          </span>
+        <Link href="/" className="flex items-center gap-3 group">
+          <div className="relative w-10 h-10 flex items-center justify-center">
+            <div className="absolute inset-0 bg-accent/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
+            {settings.logo_url ? (
+              <img src={settings.logo_url} alt="Logo" className="w-10 h-10 object-contain relative z-10" />
+            ) : (
+              <div className="relative z-10 p-2 border border-accent/30 rounded-full bg-black/40 backdrop-blur-sm">
+                <ChefHat className="w-5 h-5 text-accent" />
+              </div>
+            )}
+          </div>
+          <div className="flex flex-col -space-y-1">
+            <span className="text-2xl font-heading font-black text-gradient tracking-tight leading-none">
+              LuxeDine
+            </span>
+            <span className="text-[10px] font-bold text-accent/60 uppercase tracking-[0.3em] pl-1">
+              Signature
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
