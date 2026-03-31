@@ -20,7 +20,9 @@ export const metadata: Metadata = {
 
 import { CustomerAuthProvider } from "@/hooks/useCustomerAuth";
 import { SettingsProvider } from "@/hooks/useSettings";
+import { ThemeProvider } from "@/hooks/useTheme";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { DesignSwitcher } from "@/components/DesignSwitcher";
 
 export default function RootLayout({
   children,
@@ -29,13 +31,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
-      <body className={`${outfit.variable} ${playfair.variable} font-sans min-h-full flex flex-col antialiased`} suppressHydrationWarning>
-        <SettingsProvider>
-          <CustomerAuthProvider>
-            {children}
-            <FloatingWhatsApp />
-          </CustomerAuthProvider>
-        </SettingsProvider>
+      <body className={`${outfit.variable} ${playfair.variable} font-sans min-h-full flex flex-col antialiased transition-colors duration-500`} suppressHydrationWarning>
+        <ThemeProvider>
+          <SettingsProvider>
+            <CustomerAuthProvider>
+              {children}
+              <FloatingWhatsApp />
+              <DesignSwitcher />
+            </CustomerAuthProvider>
+          </SettingsProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

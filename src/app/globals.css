@@ -1,14 +1,40 @@
 @import "tailwindcss";
 
 :root {
+  /* Default: Luxury */
   --background: #050505;
   --foreground: #FDFDFD;
   --accent: #D4AF37;
   --accent-foreground: #000000;
   --card: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.08);
   --glass: rgba(10, 10, 10, 0.7);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --font-heading-var: var(--font-playfair);
+  --radius-card: 40px;
+}
+
+.theme-vibrant {
+  --background: #FFFFFF;
+  --foreground: #1A1A1A;
+  --accent: #E31837; /* McDonald's Red */
+  --accent-foreground: #FFFFFF;
+  --card: #F8F8F8;
+  --glass: rgba(255, 255, 255, 0.9);
+  --glass-border: rgba(0, 0, 0, 0.05);
+  --font-heading-var: var(--font-outfit);
+  --radius-card: 24px;
+}
+
+.theme-minimal {
+  --background: #F8FAFC; /* Slate 50 */
+  --foreground: #0F172A; /* Slate 900 */
+  --accent: #020617;
+  --accent-foreground: #FFFFFF;
+  --card: #FFFFFF;
+  --glass: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --font-heading-var: var(--font-outfit);
+  --radius-card: 12px;
 }
 
 @theme inline {
@@ -17,13 +43,12 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-card-bg: var(--card);
-  --color-card-border: var(--card-border);
   --color-glass: var(--glass);
   --color-glass-border: var(--glass-border);
   
-  --font-sans: var(--font-outfit), var(--font-geist-sans);
+  --font-sans: var(--font-outfit);
   --font-serif: var(--font-playfair);
-  --font-heading: var(--font-serif);
+  --font-heading: var(--font-heading-var);
 }
 
 body {

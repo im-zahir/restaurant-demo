@@ -7,12 +7,14 @@ import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCustomerAuth } from "@/hooks/useCustomerAuth";
 import { useSettings } from "@/hooks/useSettings";
+import { useTheme } from "@/hooks/useTheme";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { customerEmail, isLoaded } = useCustomerAuth();
   const { settings } = useSettings();
+  const { currentTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,28 +35,44 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        isScrolled ? "bg-glass backdrop-blur-md border-b border-glass-border py-3" : "bg-transparent"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 px-6",
+        isScrolled 
+          ? "bg-glass backdrop-blur-md border-b border-glass-border py-3" 
+          : "bg-transparent py-5"
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="relative w-10 h-10 flex items-center justify-center">
-            <div className="absolute inset-0 bg-accent/20 rounded-full scale-0 group-hover:scale-100 transition-transform duration-500" />
+          <div className="relative w-10 h-10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+            <div className={cn(
+              "absolute inset-0 rounded-full transition-transform duration-500",
+              currentTheme === "vibrant" ? "bg-accent scale-110" : "bg-accent/20 scale-0 group-hover:scale-100"
+            )} />
             {settings.logo_url ? (
               <img src={settings.logo_url} alt="Logo" className="w-10 h-10 object-contain relative z-10" />
             ) : (
-              <div className="relative z-10 p-2 border border-accent/30 rounded-full bg-black/40 backdrop-blur-sm">
-                <ChefHat className="w-5 h-5 text-accent" />
+              <div className={cn(
+                "relative z-10 p-2 border rounded-full transition-all",
+                currentTheme === "vibrant" ? "bg-accent text-white border-white/20 shadow-lg shadow-accent/40" : "bg-black/40 border-accent/30 text-accent backdrop-blur-sm"
+              )}>
+                <ChefHat className="w-5 h-5" />
               </div>
             )}
           </div>
           <div className="flex flex-col -space-y-1">
-            <span className="text-2xl font-heading font-black text-gradient tracking-tight leading-none">
-              LuxeDine
+            <span className={cn(
+              "text-2xl font-black transition-all leading-none",
+              currentTheme === "luxury" ? "font-heading text-gradient tracking-tight" : 
+              currentTheme === "vibrant" ? "font-sans text-accent uppercase italic scale-110" :
+              "font-sans text-foreground tracking-widest"
+            )}>
+              {currentTheme === "vibrant" ? "BiteNow" : "LuxeDine"}
             </span>
-            <span className="text-[10px] font-bold text-accent/60 uppercase tracking-[0.3em] pl-1">
-              Signature
+            <span className={cn(
+              "text-[10px] font-bold uppercase tracking-[0.3em] pl-1 transition-opacity",
+              currentTheme === "minimal" ? "opacity-40" : "text-accent/60"
+            )}>
+              {currentTheme === "vibrant" ? "The Bold Taste" : "Signature"}
             </span>
           </div>
         </Link>
