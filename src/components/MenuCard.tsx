@@ -45,6 +45,7 @@ export function MenuCard({ item }: { item: MenuItem }) {
             "object-cover transition-transform duration-700 group-hover:scale-110",
             currentTheme === "minimal" ? "grayscale group-hover:grayscale-0" : ""
           )}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2 z-20">
           {item.tags?.map((tag) => (

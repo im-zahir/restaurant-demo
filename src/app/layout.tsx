@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full scroll-smooth" suppressHydrationWarning>
+    <html lang="en" className="h-full scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={`${outfit.variable} ${playfair.variable} font-sans min-h-full flex flex-col antialiased transition-colors duration-500`} suppressHydrationWarning>
         <ThemeProvider>
           <SettingsProvider>
