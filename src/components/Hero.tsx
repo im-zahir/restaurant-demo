@@ -25,7 +25,7 @@ export function Hero() {
             alt="Premium Burger"
             fill
             className="object-cover object-center scale-105"
-            priority
+            priority={true}
           />
           <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-black/40" />

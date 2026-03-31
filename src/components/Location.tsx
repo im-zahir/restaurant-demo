@@ -97,6 +97,7 @@ export function Location() {
                   : "none" 
               }}
               allowFullScreen={true}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; storage-access"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="opacity-100 transition-all duration-700"
