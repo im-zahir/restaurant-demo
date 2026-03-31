@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronRight, PhoneCall, Calendar, AlertTriangle } from "lucide-react";
+import { ChevronRight, Calendar } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
 import { useTheme } from "@/hooks/useTheme";
 import { cn } from "@/lib/utils";

@@ -15,7 +15,14 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "LuxeDine | Signature Flavors & WhatsApp Ordering",
-  description: "Dine in elegance. Experience ultra-premium culinary masterpieces with seamless WhatsApp ordering and table reservations.",
+  description: "Dine in elegance. Experience ultra-premium culinary masterpieces with seamless WhatsApp ordering and table reservations in Dhaka.",
+  keywords: ["restaurant", "luxury dining", "dhaka food", "whatsapp ordering", "fine dining", "luxe dine"],
+  openGraph: {
+    title: "LuxeDine | Signature Flavors",
+    description: "Ultra-premium culinary masterpieces with seamless ordering.",
+    type: "website",
+    locale: "en_BD",
+  },
 };
 
 import { CustomerAuthProvider } from "@/hooks/useCustomerAuth";

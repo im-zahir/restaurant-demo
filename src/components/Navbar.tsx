@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ShoppingCart, Menu, X, UtensilsCrossed, ChefHat } from "lucide-react";
+import { ShoppingCart, Menu, X, ChefHat } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCustomerAuth } from "@/hooks/useCustomerAuth";
